@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% load cust_filter %}
+    {% for record in records %}
+    <h1>{{record.name}} Information</h1>
+    <ul>
+      <li>Name:{{record.name}}</li>
+      <li>Subject:{{record.subject}}</li>
+      <li>Dept:{{record.dept}}</li>
+      <li>Date:{{record.date}}</li>
+    </ul><hr>
+     <li>Date:{{record.date | date:"d-m-Y"}}</li>
+     <li>Date:{{record.date | date:"m-d-Y"}}</li>
+     <li>Date:{{record.date | date:"m/d/Y"}}</li>
+     <li>Date:{{record.date | timesince}}</li>
+     <li>Date:{{record.date | date:"d-b-Y"}}</li>
+    <li>Date:{{record.date | date:"l, F j, Y"}}</li>
+    {% endfor %}
+  </body>
+</html>
